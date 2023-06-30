@@ -1,35 +1,60 @@
 <!DOCTYPE html>
-<!-- Maybe this will work -->
+
 <html>
 
     <head>
-        <title>Todo List APP test</title>
+        <title>Todo List APP</title>
         <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+            body {
+                margin: 0px;
+                padding: 0px;
+                font-family: 'Poppins', sans-serif;
+            }
             a {
                 text-decoration: none;
                 color: black;
+            }
+            header {
+                margin-top: 0px;
+                background-color:rgb(233, 233, 233);
+                padding-top: 50px;
+                padding-left: 50px;
+            }
+            .list {
+                padding-left: 50px;
+            }
+            form {
+                padding-top: 50px;
+                padding-left: 50px;
             }
 
         </style>
     </head>
 
     <body>
-        <h1>Jenkins is just amazing, well done CI/CD and me</h1>
-        <ul>
-            <% todolist.forEach(function(todo, index) { %>
-            <li>
-                <a href="/todo/delete/<%= index %>">✘</a>
-                <a href="/todo/<%= index %>">✎</a>
-                <%- todo %>
-            </li>
-            <% }); %>
-        </ul>
+        <header>
+            <h1>Jenkins is just amazing, well done CI/CD and me</h1>
+        </header>
+        
+        <div class="list">
+            <h3>The current list is as follows: </h3>
+            <ul>
+                <% todolist.forEach(function(todo, index) { %>
+                <li>
+                    <a href="/todo/delete/<%= index %>">✘</a>
+                    <a href="/todo/<%= index %>">✎</a>
+                    <%- todo %>
+                </li>
+                <% }); %>
+            </ul>
+        </div>
 
         <form action="/todo/add/" method="post">
             <p>
-                <label for="newtodo">What shoud I do?</label>
-                <input type="text" name="newtodo" id="newtodo" autofocus />
-                <input type="submit" value="Add" />
+                <label for="newtodo">Add this in my list: </label>
+                <input type="text" name="newtodo" id="newtodo" style="margin-left: 20px;" autofocus />
+                <input type="submit" style="margin-left: 20px;" value="Add" />
             </p>
         </form>
     </body>
