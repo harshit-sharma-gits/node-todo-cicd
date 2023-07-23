@@ -1,4 +1,4 @@
-# NodeJS ToDo List Application
+# Simple NodeJS ToDo List Application
 
 Run these commands:
 
